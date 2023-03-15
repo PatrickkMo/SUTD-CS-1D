@@ -133,7 +133,7 @@ module statement_tester #(
           state.d = state.DONE;
         }
 
-        else if (slow_clk_edge.out && fin_out != EXPECTED_OUTPUT) {
+        else if (fin_out != EXPECTED_OUTPUT) {
           state.d = state.ERROR_1;
         }
 
