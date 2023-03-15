@@ -1,0 +1,24 @@
+module multiplier16 (
+    input x[16],
+    input y[16],
+    input alufn[6],
+    output s[16],
+    output error  // for math error 
+  ) {
+  
+ sig result[16];
+  
+  always {
+    error = 0;
+
+    case (alufn[1:0]) {
+      b00:
+        result = x * y;
+        s = result;
+        
+      default:
+        s = 16b0;
+        
+  }
+}
+}

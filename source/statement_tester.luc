@@ -1,0 +1,158 @@
+module statement_tester #(
+    TEST_ID_HIGH,
+    TEST_ID_LOW,
+    INPUT_X,
+    INPUT_Y,
+   
+    OPCODE,
+    EXPECTED_OUTPUT
+  ) (
+    input clk,  
+    input rst,  
+    input start,
+    input error,
+    output io_seg[8],
+    output io_sel[4],
+    output opcode_led[6],
+    output done
+    
+  ) {
+  
+  sig alufn[6];
+  sig x[16];
+  sig y[16];
+  sig id_high[4];
+  sig id_low[4];
+  sig q_signal[16];
+  sig fin_out[16];
+ 
+  .clk(clk) {
+    edge_detector slow_clk_edge (#RISE(1), #FALL(0));
+    //button_conditioner button_cond;
+    button_conditioner required_error;
+    //edge_detector edge (#RISE(1), #FALL(0));
+    edge_detector error_edge (#RISE(1), #FALL(0));
+
+    .rst(rst) {
+      fsm state = {INIT, DISP_X_1, DISP_X_2, DISP_Y_1, DISP_Y_2, DISP_OUT_1, DISP_OUT_2, DONE, ERROR_1, ERROR_2};
+      dff out[16];
+      counter slow_clock (#SIZE(1), #DIV(25)); // Clock with a period of about 0.65 seconds
+      multi_seven_seg seg_display;
+     
+       // We need CLK and RST for ALU for factorial functionality
+    }
+  } 
+   alu16 alu (.alufn(alufn), .x(x), .y(y));
+  //sig state_change;
+  sig compulsory_error;
+  always {
+ //   button_cond.in = INPUT_STATE_CHANGE_BTN;
+   // edge.in = button_cond.out;
+   // state_change = edge.out;
+   
+    required_error.in = error;
+    error_edge.in = required_error.out;
+    compulsory_error = error_edge.out;
+
+   
+    
+    
+    done = 0;
+    slow_clk_edge.in = slow_clock.value;
+    io_seg = 8hff;
+    io_sel = 4hf;
+    seg_display.values = {4b0,4b0,4b0,4b0};
+
+    alufn = OPCODE;
+    
+    x = INPUT_X;
+    y = INPUT_Y;
+    id_high = TEST_ID_HIGH;
+    id_low = TEST_ID_LOW;
+    out.d = alu.out;
+
+    opcode_led = OPCODE;
+
+    case (state.q) {
+      state.INIT:
+        seg_display.values = {4hc, 4h5, id_high, id_low}; // CS##, where ## is the test case ID number in decimal
+        io_seg = ~seg_display.seg;
+        io_sel = ~seg_display.sel;
+        if (start && slow_clk_edge.out) {
+          state.d = state.DISP_X_1;
+        }
+
+      state.DISP_X_1:
+        io_seg = 8b10001001; // X
+        io_sel = 4b1110;
+        if (slow_clk_edge.out) {
+          state.d = state.DISP_X_2;
+        }
+
+      state.DISP_X_2:
+        seg_display.values = {x[15:12], x[11:8], x[7:4], x[3:0]};
+        io_seg = ~seg_display.seg;
+        io_sel = ~seg_display.sel;
+        if (slow_clk_edge.out) {
+          state.d = state.DISP_Y_1;
+        }
+
+      state.DISP_Y_1:
+        io_seg = 8b10010001; // y
+        io_sel = 4b1110;
+        if (slow_clk_edge.out) {
+          state.d = state.DISP_Y_2;
+        }
+
+      state.DISP_Y_2:
+        seg_display.values = {y[15:12], y[11:8], y[7:4], y[3:0]};
+        io_seg = ~seg_display.seg;
+        io_sel = ~seg_display.sel;
+        if (slow_clk_edge.out) {
+          state.d = state.DISP_OUT_1;
+        }
+
+      state.DISP_OUT_1:
+        io_seg = 8b10100011;
+        io_sel = 4b1110;
+        if (slow_clk_edge.out) {
+          state.d = state.DISP_OUT_2;
+        }
+
+      state.DISP_OUT_2:
+        seg_display.values = {out.q[15:12], out.q[11:8], out.q[7:4], out.q[3:0]};
+        io_seg = ~seg_display.seg;
+        io_sel = ~seg_display.sel;
+        q_signal = ~out.q;
+        fin_out = out.q;
+        if (compulsory_error){
+          fin_out = q_signal;
+          
+        }
+        if (slow_clk_edge.out && fin_out == EXPECTED_OUTPUT) {
+          state.d = state.DONE;
+        }
+
+        else if (slow_clk_edge.out && fin_out != EXPECTED_OUTPUT) {
+          state.d = state.ERROR_1;
+        }
+
+      state.DONE:
+        io_seg = 8b10100001;
+        io_sel = 4b1110;
+        opcode_led = 6b000000;
+      
+        done = 1;
+
+    
+      state.ERROR_1:
+   
+        seg_display.values = {4he, 4he, 4he, 4he}; // EEEE
+        io_seg = ~seg_display.seg;
+        io_sel = ~seg_display.sel;
+       
+          
+       
+    }
+  }
+}

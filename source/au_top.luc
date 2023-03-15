@@ -1,0 +1,75 @@
+// au_top has two states: AUTO and MANUAL
+// au_top toggles between the states when io_button[2] is pressed
+
+module au_top (
+    input clk,             
+    input rst_n,          
+    output led [8],       
+    input usb_rx,         
+    output usb_tx,          
+    output io_led [3][8],   
+    output io_seg [8],      
+    output io_sel [4],     
+    input io_button[5],    
+    input io_dip [3][8]     
+  ) {
+
+  sig rst; 
+  sig state_change; 
+  sig start_auto_test; 
+ 
+  .clk(clk) {
+
+    reset_conditioner reset_cond;
+    button_conditioner button_cond;
+    edge_detector edge (#RISE(1), #FALL(0));
+   
+    .rst(rst){
+      fsm state = {MANUAL, AUTOMATIC};
+      auto_tester auto_tester (.start(start_auto_test)
+      //, .restart_btn(io_button[1]), 
+      ,.error(io_button[0]));
+      manual_tester manual_tester (.io_dip(io_dip), .state_change_btn(io_button[1]), .forced_error(io_button[0]));
+    }
+  }
+
+  always {
+    reset_cond.in = ~rst_n; 
+    rst = reset_cond.out;  
+
+    usb_tx = usb_rx;       
+    
+    button_cond.in = io_button[2];
+    edge.in = button_cond.out;
+    state_change = edge.out;  
+
+    start_auto_test = 0;
+
+    io_led = 3x{{8h00}};     
+    io_seg = manual_tester.io_seg;
+    io_sel = manual_tester.io_sel;
+
+    case (state.q) {
+      state.MANUAL:
+        io_led = manual_tester.io_led;
+        if (state_change) {
+          state.d = state.AUTOMATIC;
+        }
+
+      state.AUTOMATIC:
+        io_seg = auto_tester.io_seg;
+        io_sel = auto_tester.io_sel;
+        io_led[2][5:0] = auto_tester.opcode_led; 
+        start_auto_test = 1;
+        if (state_change) {
+          state.d = state.MANUAL;
+        }
+    }
+
+    led = 8h00;             
+  }
+}
+
+
+
+
