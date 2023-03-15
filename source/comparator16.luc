@@ -1,0 +1,54 @@
+module comparator16 (
+    input x[16],
+    input y[16],
+    input alufn[6],
+    output result[16]
+  ) {
+
+  always {
+    
+    result[15:1] = 15b0;
+
+    case (alufn[3]) {
+      b0: // == < <=
+        case (alufn[2:1]) {
+          b00:
+            result[0] = b0;
+
+          b01:
+            result[0] = (x == y);  //cmpeq
+
+          b10:
+            result[0] = (x < y);   //cmplt
+
+          b11:
+            result[0] = (x <= y);  //cmple
+
+          default:
+            result[0] = b0;
+        }
+      
+      b1:
+        // min max
+        case (alufn[2:1]) { //max
+          b01:
+            if (x > y) {
+              result = x;
+            }
+            else {
+              result = y;
+            }
+
+          b10:
+            if (x < y) {  //min
+              result = x;
+            }
+            else {
+              result = y;
+            }
+        }
+    }
+    
+  }
+}
+
