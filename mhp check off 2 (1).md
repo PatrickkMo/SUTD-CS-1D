@@ -40,11 +40,15 @@ We have designed an instruction set for the operators we wish to utilize in our 
 |11 101X|MAXIMUM||
 |11 110X|MINIMUM||
 
-Fig. 1: Instruction set for ALU
 ## <a name="_oswkajkuzg5v"></a>FPGA Diagram
 ![](Aspose.Words.a01de651-2f29-43f7-a183-fc0ea6a09658.001.png)
 
-Fig. 2 Annotated FPGA Diagram
+The 5 buttons on the FPGA are referenced as follows:
+Top button: **io\_button[0]**
+Middle button: **io\_button[1]**
+Bottom button: **io\_button[2]**
+Left button: **io\_button[3]**
+Right button: **io\_button[4]**
 
 The functionality of the FPGA is explained in the table below:
 
