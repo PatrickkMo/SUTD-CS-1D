@@ -1,0 +1,1001 @@
+
+*** Running vivado
+    with args -log au_top_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source au_top_0.tcl
+
+
+WARNING: Default location for XILINX_HLS not found: 
+
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source au_top_0.tcl -notrace
+Command: synth_design -top au_top_0 -part xc7a35tftg256-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tftg256-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 20304
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1000.164 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'au_top_0' [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/au_top_0.v:7]
+	Parameter MANUAL_state bound to: 1'b0 
+	Parameter AUTOMATIC_state bound to: 1'b1 
+INFO: [Synth 8-6157] synthesizing module 'reset_conditioner_1' [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/reset_conditioner_1.v:11]
+	Parameter STAGES bound to: 3'b100 
+INFO: [Synth 8-6155] done synthesizing module 'reset_conditioner_1' (1#1) [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/reset_conditioner_1.v:11]
+INFO: [Synth 8-6157] synthesizing module 'button_conditioner_2' [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/button_conditioner_2.v:13]
+	Parameter CLK_FREQ bound to: 26'b10111110101111000010000000 
+	Parameter MIN_DELAY bound to: 5'b10100 
+	Parameter NUM_SYNC bound to: 2'b10 
+INFO: [Synth 8-6157] synthesizing module 'pipeline_6' [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/pipeline_6.v:11]
+	Parameter DEPTH bound to: 2'b10 
+INFO: [Synth 8-6155] done synthesizing module 'pipeline_6' (2#1) [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/pipeline_6.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'button_conditioner_2' (3#1) [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/button_conditioner_2.v:13]
+INFO: [Synth 8-6157] synthesizing module 'edge_detector_3' [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/edge_detector_3.v:12]
+	Parameter RISE bound to: 1'b1 
+	Parameter FALL bound to: 1'b0 
+INFO: [Synth 8-6155] done synthesizing module 'edge_detector_3' (4#1) [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/edge_detector_3.v:12]
+INFO: [Synth 8-6157] synthesizing module 'auto_tester_4' [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/auto_tester_4.v:7]
+	Parameter STANDBY_autostate bound to: 5'b00000 
+	Parameter TEST_0_autostate bound to: 5'b00001 
+	Parameter TEST_1_autostate bound to: 5'b00010 
+	Parameter TEST_2_autostate bound to: 5'b00011 
+	Parameter TEST_3_autostate bound to: 5'b00100 
+	Parameter TEST_4_autostate bound to: 5'b00101 
+	Parameter TEST_5_autostate bound to: 5'b00110 
+	Parameter TEST_6_autostate bound to: 5'b00111 
+	Parameter TEST_7_autostate bound to: 5'b01000 
+	Parameter TEST_8_autostate bound to: 5'b01001 
+	Parameter TEST_9_autostate bound to: 5'b01010 
+	Parameter TEST_10_autostate bound to: 5'b01011 
+	Parameter TEST_11_autostate bound to: 5'b01100 
+	Parameter TEST_12_autostate bound to: 5'b01101 
+	Parameter TEST_13_autostate bound to: 5'b01110 
+	Parameter TEST_14_autostate bound to: 5'b01111 
+	Parameter TEST_15_autostate bound to: 5'b10000 
+	Parameter TEST_16_autostate bound to: 5'b10001 
+	Parameter TEST_17_autostate bound to: 5'b10010 
+	Parameter TEST_18_autostate bound to: 5'b10011 
+	Parameter DONE_autostate bound to: 5'b10100 
+	Parameter ERROR_autostate bound to: 5'b10101 
+INFO: [Synth 8-6157] synthesizing module 'statement_tester_7' [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_7.v:16]
+	Parameter TEST_ID_HIGH bound to: 1'b0 
+	Parameter TEST_ID_LOW bound to: 1'b0 
+	Parameter INPUT_X bound to: 16'b0000000000000001 
+	Parameter INPUT_Y bound to: 16'b0000000000000010 
+	Parameter OPCODE bound to: 6'b000000 
+	Parameter EXPECTED_OUTPUT bound to: 16'b0000000000000011 
+	Parameter INIT_state bound to: 4'b0000 
+	Parameter DISP_X_1_state bound to: 4'b0001 
+	Parameter DISP_X_2_state bound to: 4'b0010 
+	Parameter DISP_Y_1_state bound to: 4'b0011 
+	Parameter DISP_Y_2_state bound to: 4'b0100 
+	Parameter DISP_OUT_1_state bound to: 4'b0101 
+	Parameter DISP_OUT_2_state bound to: 4'b0110 
+	Parameter DONE_state bound to: 4'b0111 
+	Parameter ERROR_1_state bound to: 4'b1000 
+	Parameter ERROR_2_state bound to: 4'b1001 
+INFO: [Synth 8-6157] synthesizing module 'counter_26' [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/counter_26.v:14]
+	Parameter SIZE bound to: 1'b1 
+	Parameter DIV bound to: 5'b11001 
+	Parameter TOP bound to: 1'b0 
+	Parameter UP bound to: 1'b1 
+	Parameter MAX_VALUE bound to: 26'b01111111111111111111111111 
+INFO: [Synth 8-6155] done synthesizing module 'counter_26' (5#1) [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/counter_26.v:14]
+INFO: [Synth 8-6157] synthesizing module 'multi_seven_seg_24' [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/multi_seven_seg_24.v:12]
+	Parameter DIGITS bound to: 3'b100 
+	Parameter DIV bound to: 5'b10000 
+	Parameter DIGIT_BITS bound to: 2'b10 
+INFO: [Synth 8-6157] synthesizing module 'counter_27' [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/counter_27.v:14]
+	Parameter SIZE bound to: 2'b10 
+	Parameter DIV bound to: 5'b10000 
+	Parameter TOP bound to: 4'b0011 
+	Parameter UP bound to: 1'b1 
+	Parameter MAX_VALUE bound to: 20'b00111111111111111111 
+INFO: [Synth 8-6155] done synthesizing module 'counter_27' (6#1) [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/counter_27.v:14]
+INFO: [Synth 8-6157] synthesizing module 'seven_seg_28' [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/seven_seg_28.v:7]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/seven_seg_28.v:16]
+INFO: [Synth 8-6155] done synthesizing module 'seven_seg_28' (7#1) [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/seven_seg_28.v:7]
+INFO: [Synth 8-6157] synthesizing module 'decoder_29' [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/decoder_29.v:11]
+	Parameter WIDTH bound to: 2'b10 
+INFO: [Synth 8-6155] done synthesizing module 'decoder_29' (8#1) [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/decoder_29.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'multi_seven_seg_24' (9#1) [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/multi_seven_seg_24.v:12]
+INFO: [Synth 8-6157] synthesizing module 'alu16_25' [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/alu16_25.v:7]
+INFO: [Synth 8-6157] synthesizing module 'boolean16_30' [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/boolean16_30.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'boolean16_30' (10#1) [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/boolean16_30.v:7]
+INFO: [Synth 8-6157] synthesizing module 'shifter16_31' [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/shifter16_31.v:7]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/shifter16_31.v:18]
+INFO: [Synth 8-6155] done synthesizing module 'shifter16_31' (11#1) [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/shifter16_31.v:7]
+INFO: [Synth 8-6157] synthesizing module 'comparator16_32' [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/comparator16_32.v:7]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/comparator16_32.v:22]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/comparator16_32.v:42]
+INFO: [Synth 8-6155] done synthesizing module 'comparator16_32' (12#1) [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/comparator16_32.v:7]
+INFO: [Synth 8-6157] synthesizing module 'adder16_33' [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/adder16_33.v:7]
+INFO: [Synth 8-6157] synthesizing module 'multiplier16_34' [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/multiplier16_34.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'multiplier16_34' (13#1) [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/multiplier16_34.v:7]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/adder16_33.v:39]
+INFO: [Synth 8-6155] done synthesizing module 'adder16_33' (14#1) [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/adder16_33.v:7]
+INFO: [Synth 8-226] default block is never used [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/alu16_25.v:68]
+INFO: [Synth 8-6155] done synthesizing module 'alu16_25' (15#1) [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/alu16_25.v:7]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_7.v:138]
+INFO: [Synth 8-6155] done synthesizing module 'statement_tester_7' (16#1) [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_7.v:16]
+INFO: [Synth 8-6157] synthesizing module 'statement_tester_8' [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_8.v:16]
+	Parameter TEST_ID_HIGH bound to: 1'b0 
+	Parameter TEST_ID_LOW bound to: 1'b1 
+	Parameter INPUT_X bound to: 16'b0000000000000001 
+	Parameter INPUT_Y bound to: 16'b1111111111111111 
+	Parameter OPCODE bound to: 6'b000000 
+	Parameter EXPECTED_OUTPUT bound to: 16'b0000000000000000 
+	Parameter INIT_state bound to: 4'b0000 
+	Parameter DISP_X_1_state bound to: 4'b0001 
+	Parameter DISP_X_2_state bound to: 4'b0010 
+	Parameter DISP_Y_1_state bound to: 4'b0011 
+	Parameter DISP_Y_2_state bound to: 4'b0100 
+	Parameter DISP_OUT_1_state bound to: 4'b0101 
+	Parameter DISP_OUT_2_state bound to: 4'b0110 
+	Parameter DONE_state bound to: 4'b0111 
+	Parameter ERROR_1_state bound to: 4'b1000 
+	Parameter ERROR_2_state bound to: 4'b1001 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_8.v:138]
+INFO: [Synth 8-6155] done synthesizing module 'statement_tester_8' (17#1) [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_8.v:16]
+INFO: [Synth 8-6157] synthesizing module 'statement_tester_9' [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_9.v:16]
+	Parameter TEST_ID_HIGH bound to: 1'b0 
+	Parameter TEST_ID_LOW bound to: 2'b10 
+	Parameter INPUT_X bound to: 16'b0111111111111111 
+	Parameter INPUT_Y bound to: 16'b0000000000000001 
+	Parameter OPCODE bound to: 6'b000000 
+	Parameter EXPECTED_OUTPUT bound to: 16'b1000000000000000 
+	Parameter INIT_state bound to: 4'b0000 
+	Parameter DISP_X_1_state bound to: 4'b0001 
+	Parameter DISP_X_2_state bound to: 4'b0010 
+	Parameter DISP_Y_1_state bound to: 4'b0011 
+	Parameter DISP_Y_2_state bound to: 4'b0100 
+	Parameter DISP_OUT_1_state bound to: 4'b0101 
+	Parameter DISP_OUT_2_state bound to: 4'b0110 
+	Parameter DONE_state bound to: 4'b0111 
+	Parameter ERROR_1_state bound to: 4'b1000 
+	Parameter ERROR_2_state bound to: 4'b1001 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_9.v:138]
+INFO: [Synth 8-6155] done synthesizing module 'statement_tester_9' (18#1) [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_9.v:16]
+INFO: [Synth 8-6157] synthesizing module 'statement_tester_10' [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_10.v:16]
+	Parameter TEST_ID_HIGH bound to: 1'b0 
+	Parameter TEST_ID_LOW bound to: 2'b11 
+	Parameter INPUT_X bound to: 16'b0000000000000011 
+	Parameter INPUT_Y bound to: 16'b0000000000000010 
+	Parameter OPCODE bound to: 6'b000001 
+	Parameter EXPECTED_OUTPUT bound to: 16'b0000000000000001 
+	Parameter INIT_state bound to: 4'b0000 
+	Parameter DISP_X_1_state bound to: 4'b0001 
+	Parameter DISP_X_2_state bound to: 4'b0010 
+	Parameter DISP_Y_1_state bound to: 4'b0011 
+	Parameter DISP_Y_2_state bound to: 4'b0100 
+	Parameter DISP_OUT_1_state bound to: 4'b0101 
+	Parameter DISP_OUT_2_state bound to: 4'b0110 
+	Parameter DONE_state bound to: 4'b0111 
+	Parameter ERROR_1_state bound to: 4'b1000 
+	Parameter ERROR_2_state bound to: 4'b1001 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_10.v:138]
+INFO: [Synth 8-6155] done synthesizing module 'statement_tester_10' (19#1) [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_10.v:16]
+INFO: [Synth 8-6157] synthesizing module 'statement_tester_11' [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_11.v:16]
+	Parameter TEST_ID_HIGH bound to: 1'b0 
+	Parameter TEST_ID_LOW bound to: 3'b100 
+	Parameter INPUT_X bound to: 16'b0000000000000000 
+	Parameter INPUT_Y bound to: 16'b0000000000000001 
+	Parameter OPCODE bound to: 6'b000001 
+	Parameter EXPECTED_OUTPUT bound to: 16'b1111111111111111 
+	Parameter INIT_state bound to: 4'b0000 
+	Parameter DISP_X_1_state bound to: 4'b0001 
+	Parameter DISP_X_2_state bound to: 4'b0010 
+	Parameter DISP_Y_1_state bound to: 4'b0011 
+	Parameter DISP_Y_2_state bound to: 4'b0100 
+	Parameter DISP_OUT_1_state bound to: 4'b0101 
+	Parameter DISP_OUT_2_state bound to: 4'b0110 
+	Parameter DONE_state bound to: 4'b0111 
+	Parameter ERROR_1_state bound to: 4'b1000 
+	Parameter ERROR_2_state bound to: 4'b1001 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_11.v:138]
+INFO: [Synth 8-6155] done synthesizing module 'statement_tester_11' (20#1) [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_11.v:16]
+INFO: [Synth 8-6157] synthesizing module 'statement_tester_12' [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_12.v:16]
+	Parameter TEST_ID_HIGH bound to: 1'b0 
+	Parameter TEST_ID_LOW bound to: 3'b101 
+	Parameter INPUT_X bound to: 16'b0111111111111111 
+	Parameter INPUT_Y bound to: 16'b0000000000000000 
+	Parameter OPCODE bound to: 6'b000001 
+	Parameter EXPECTED_OUTPUT bound to: 16'b0000000000000000 
+	Parameter INIT_state bound to: 4'b0000 
+	Parameter DISP_X_1_state bound to: 4'b0001 
+	Parameter DISP_X_2_state bound to: 4'b0010 
+	Parameter DISP_Y_1_state bound to: 4'b0011 
+	Parameter DISP_Y_2_state bound to: 4'b0100 
+	Parameter DISP_OUT_1_state bound to: 4'b0101 
+	Parameter DISP_OUT_2_state bound to: 4'b0110 
+	Parameter DONE_state bound to: 4'b0111 
+	Parameter ERROR_1_state bound to: 4'b1000 
+	Parameter ERROR_2_state bound to: 4'b1001 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_12.v:138]
+INFO: [Synth 8-6155] done synthesizing module 'statement_tester_12' (21#1) [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_12.v:16]
+INFO: [Synth 8-6157] synthesizing module 'statement_tester_13' [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_13.v:16]
+	Parameter TEST_ID_HIGH bound to: 1'b0 
+	Parameter TEST_ID_LOW bound to: 3'b110 
+	Parameter INPUT_X bound to: 16'b0000000000000011 
+	Parameter INPUT_Y bound to: 16'b0000000000000010 
+	Parameter OPCODE bound to: 6'b000100 
+	Parameter EXPECTED_OUTPUT bound to: 16'b0000000000000110 
+	Parameter INIT_state bound to: 4'b0000 
+	Parameter DISP_X_1_state bound to: 4'b0001 
+	Parameter DISP_X_2_state bound to: 4'b0010 
+	Parameter DISP_Y_1_state bound to: 4'b0011 
+	Parameter DISP_Y_2_state bound to: 4'b0100 
+	Parameter DISP_OUT_1_state bound to: 4'b0101 
+	Parameter DISP_OUT_2_state bound to: 4'b0110 
+	Parameter DONE_state bound to: 4'b0111 
+	Parameter ERROR_1_state bound to: 4'b1000 
+	Parameter ERROR_2_state bound to: 4'b1001 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_13.v:138]
+INFO: [Synth 8-6155] done synthesizing module 'statement_tester_13' (22#1) [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_13.v:16]
+INFO: [Synth 8-6157] synthesizing module 'statement_tester_14' [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_14.v:16]
+	Parameter TEST_ID_HIGH bound to: 1'b0 
+	Parameter TEST_ID_LOW bound to: 3'b111 
+	Parameter INPUT_X bound to: 16'b1111111111110010 
+	Parameter INPUT_Y bound to: 16'b1111111111110011 
+	Parameter OPCODE bound to: 6'b000100 
+	Parameter EXPECTED_OUTPUT bound to: 16'b1111111111111111 
+	Parameter INIT_state bound to: 4'b0000 
+	Parameter DISP_X_1_state bound to: 4'b0001 
+	Parameter DISP_X_2_state bound to: 4'b0010 
+	Parameter DISP_Y_1_state bound to: 4'b0011 
+	Parameter DISP_Y_2_state bound to: 4'b0100 
+	Parameter DISP_OUT_1_state bound to: 4'b0101 
+	Parameter DISP_OUT_2_state bound to: 4'b0110 
+	Parameter DONE_state bound to: 4'b0111 
+	Parameter ERROR_1_state bound to: 4'b1000 
+	Parameter ERROR_2_state bound to: 4'b1001 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_14.v:138]
+INFO: [Synth 8-6155] done synthesizing module 'statement_tester_14' (23#1) [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_14.v:16]
+INFO: [Synth 8-6157] synthesizing module 'statement_tester_15' [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_15.v:16]
+	Parameter TEST_ID_HIGH bound to: 1'b0 
+	Parameter TEST_ID_LOW bound to: 4'b1000 
+	Parameter INPUT_X bound to: 16'b0010111100101111 
+	Parameter INPUT_Y bound to: 16'b0000000100000001 
+	Parameter OPCODE bound to: 6'b010000 
+	Parameter EXPECTED_OUTPUT bound to: 16'b0000000000000000 
+	Parameter INIT_state bound to: 4'b0000 
+	Parameter DISP_X_1_state bound to: 4'b0001 
+	Parameter DISP_X_2_state bound to: 4'b0010 
+	Parameter DISP_Y_1_state bound to: 4'b0011 
+	Parameter DISP_Y_2_state bound to: 4'b0100 
+	Parameter DISP_OUT_1_state bound to: 4'b0101 
+	Parameter DISP_OUT_2_state bound to: 4'b0110 
+	Parameter DONE_state bound to: 4'b0111 
+	Parameter ERROR_1_state bound to: 4'b1000 
+	Parameter ERROR_2_state bound to: 4'b1001 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_15.v:138]
+INFO: [Synth 8-6155] done synthesizing module 'statement_tester_15' (24#1) [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_15.v:16]
+INFO: [Synth 8-6157] synthesizing module 'statement_tester_16' [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_16.v:16]
+	Parameter TEST_ID_HIGH bound to: 1'b0 
+	Parameter TEST_ID_LOW bound to: 4'b1001 
+	Parameter INPUT_X bound to: 16'b1111111111111111 
+	Parameter INPUT_Y bound to: 16'b1111111111111111 
+	Parameter OPCODE bound to: 6'b010110 
+	Parameter EXPECTED_OUTPUT bound to: 16'b0000000000000000 
+	Parameter INIT_state bound to: 4'b0000 
+	Parameter DISP_X_1_state bound to: 4'b0001 
+	Parameter DISP_X_2_state bound to: 4'b0010 
+	Parameter DISP_Y_1_state bound to: 4'b0011 
+	Parameter DISP_Y_2_state bound to: 4'b0100 
+	Parameter DISP_OUT_1_state bound to: 4'b0101 
+	Parameter DISP_OUT_2_state bound to: 4'b0110 
+	Parameter DONE_state bound to: 4'b0111 
+	Parameter ERROR_1_state bound to: 4'b1000 
+	Parameter ERROR_2_state bound to: 4'b1001 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_16.v:138]
+INFO: [Synth 8-6155] done synthesizing module 'statement_tester_16' (25#1) [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_16.v:16]
+INFO: [Synth 8-6157] synthesizing module 'statement_tester_17' [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_17.v:16]
+	Parameter TEST_ID_HIGH bound to: 1'b1 
+	Parameter TEST_ID_LOW bound to: 2'b10 
+	Parameter INPUT_X bound to: 16'b1111111111111111 
+	Parameter INPUT_Y bound to: 16'b0000000000001000 
+	Parameter OPCODE bound to: 6'b100000 
+	Parameter EXPECTED_OUTPUT bound to: 16'b1111111100000000 
+	Parameter INIT_state bound to: 4'b0000 
+	Parameter DISP_X_1_state bound to: 4'b0001 
+	Parameter DISP_X_2_state bound to: 4'b0010 
+	Parameter DISP_Y_1_state bound to: 4'b0011 
+	Parameter DISP_Y_2_state bound to: 4'b0100 
+	Parameter DISP_OUT_1_state bound to: 4'b0101 
+	Parameter DISP_OUT_2_state bound to: 4'b0110 
+	Parameter DONE_state bound to: 4'b0111 
+	Parameter ERROR_1_state bound to: 4'b1000 
+	Parameter ERROR_2_state bound to: 4'b1001 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_17.v:138]
+INFO: [Synth 8-6155] done synthesizing module 'statement_tester_17' (26#1) [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_17.v:16]
+INFO: [Synth 8-6157] synthesizing module 'statement_tester_18' [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_18.v:16]
+	Parameter TEST_ID_HIGH bound to: 1'b1 
+	Parameter TEST_ID_LOW bound to: 2'b11 
+	Parameter INPUT_X bound to: 16'b0011111111111111 
+	Parameter INPUT_Y bound to: 16'b0000000000001000 
+	Parameter OPCODE bound to: 6'b100011 
+	Parameter EXPECTED_OUTPUT bound to: 16'b0000000000111111 
+	Parameter INIT_state bound to: 4'b0000 
+	Parameter DISP_X_1_state bound to: 4'b0001 
+	Parameter DISP_X_2_state bound to: 4'b0010 
+	Parameter DISP_Y_1_state bound to: 4'b0011 
+	Parameter DISP_Y_2_state bound to: 4'b0100 
+	Parameter DISP_OUT_1_state bound to: 4'b0101 
+	Parameter DISP_OUT_2_state bound to: 4'b0110 
+	Parameter DONE_state bound to: 4'b0111 
+	Parameter ERROR_1_state bound to: 4'b1000 
+	Parameter ERROR_2_state bound to: 4'b1001 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_18.v:138]
+INFO: [Synth 8-6155] done synthesizing module 'statement_tester_18' (27#1) [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_18.v:16]
+INFO: [Synth 8-6157] synthesizing module 'statement_tester_19' [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_19.v:16]
+	Parameter TEST_ID_HIGH bound to: 1'b1 
+	Parameter TEST_ID_LOW bound to: 3'b100 
+	Parameter INPUT_X bound to: 16'b0000000000000001 
+	Parameter INPUT_Y bound to: 16'b0000000000000001 
+	Parameter OPCODE bound to: 6'b110010 
+	Parameter EXPECTED_OUTPUT bound to: 16'b1111111111111111 
+	Parameter INIT_state bound to: 4'b0000 
+	Parameter DISP_X_1_state bound to: 4'b0001 
+	Parameter DISP_X_2_state bound to: 4'b0010 
+	Parameter DISP_Y_1_state bound to: 4'b0011 
+	Parameter DISP_Y_2_state bound to: 4'b0100 
+	Parameter DISP_OUT_1_state bound to: 4'b0101 
+	Parameter DISP_OUT_2_state bound to: 4'b0110 
+	Parameter DONE_state bound to: 4'b0111 
+	Parameter ERROR_1_state bound to: 4'b1000 
+	Parameter ERROR_2_state bound to: 4'b1001 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_19.v:138]
+INFO: [Synth 8-6155] done synthesizing module 'statement_tester_19' (28#1) [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_19.v:16]
+INFO: [Synth 8-6157] synthesizing module 'statement_tester_20' [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_20.v:16]
+	Parameter TEST_ID_HIGH bound to: 1'b1 
+	Parameter TEST_ID_LOW bound to: 3'b101 
+	Parameter INPUT_X bound to: 16'b0000000000000000 
+	Parameter INPUT_Y bound to: 16'b0111111111111111 
+	Parameter OPCODE bound to: 6'b110101 
+	Parameter EXPECTED_OUTPUT bound to: 16'b0000000000000001 
+	Parameter INIT_state bound to: 4'b0000 
+	Parameter DISP_X_1_state bound to: 4'b0001 
+	Parameter DISP_X_2_state bound to: 4'b0010 
+	Parameter DISP_Y_1_state bound to: 4'b0011 
+	Parameter DISP_Y_2_state bound to: 4'b0100 
+	Parameter DISP_OUT_1_state bound to: 4'b0101 
+	Parameter DISP_OUT_2_state bound to: 4'b0110 
+	Parameter DONE_state bound to: 4'b0111 
+	Parameter ERROR_1_state bound to: 4'b1000 
+	Parameter ERROR_2_state bound to: 4'b1001 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_20.v:138]
+INFO: [Synth 8-6155] done synthesizing module 'statement_tester_20' (29#1) [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_20.v:16]
+INFO: [Synth 8-6157] synthesizing module 'statement_tester_21' [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_21.v:16]
+	Parameter TEST_ID_HIGH bound to: 1'b1 
+	Parameter TEST_ID_LOW bound to: 3'b110 
+	Parameter INPUT_X bound to: 16'b0111111111111111 
+	Parameter INPUT_Y bound to: 16'b0000000000000000 
+	Parameter OPCODE bound to: 6'b110111 
+	Parameter EXPECTED_OUTPUT bound to: 16'b0000000000000000 
+	Parameter INIT_state bound to: 4'b0000 
+	Parameter DISP_X_1_state bound to: 4'b0001 
+	Parameter DISP_X_2_state bound to: 4'b0010 
+	Parameter DISP_Y_1_state bound to: 4'b0011 
+	Parameter DISP_Y_2_state bound to: 4'b0100 
+	Parameter DISP_OUT_1_state bound to: 4'b0101 
+	Parameter DISP_OUT_2_state bound to: 4'b0110 
+	Parameter DONE_state bound to: 4'b0111 
+	Parameter ERROR_1_state bound to: 4'b1000 
+	Parameter ERROR_2_state bound to: 4'b1001 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_21.v:138]
+INFO: [Synth 8-6155] done synthesizing module 'statement_tester_21' (30#1) [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_21.v:16]
+INFO: [Synth 8-6157] synthesizing module 'statement_tester_22' [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_22.v:16]
+	Parameter TEST_ID_HIGH bound to: 1'b1 
+	Parameter TEST_ID_LOW bound to: 3'b111 
+	Parameter INPUT_X bound to: 16'b0000001000000010 
+	Parameter INPUT_Y bound to: 16'b1111000000000111 
+	Parameter OPCODE bound to: 6'b111011 
+	Parameter EXPECTED_OUTPUT bound to: 16'b1111000000000111 
+	Parameter INIT_state bound to: 4'b0000 
+	Parameter DISP_X_1_state bound to: 4'b0001 
+	Parameter DISP_X_2_state bound to: 4'b0010 
+	Parameter DISP_Y_1_state bound to: 4'b0011 
+	Parameter DISP_Y_2_state bound to: 4'b0100 
+	Parameter DISP_OUT_1_state bound to: 4'b0101 
+	Parameter DISP_OUT_2_state bound to: 4'b0110 
+	Parameter DONE_state bound to: 4'b0111 
+	Parameter ERROR_1_state bound to: 4'b1000 
+	Parameter ERROR_2_state bound to: 4'b1001 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_22.v:138]
+INFO: [Synth 8-6155] done synthesizing module 'statement_tester_22' (31#1) [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_22.v:16]
+INFO: [Synth 8-6157] synthesizing module 'statement_tester_23' [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_23.v:16]
+	Parameter TEST_ID_HIGH bound to: 1'b1 
+	Parameter TEST_ID_LOW bound to: 4'b1000 
+	Parameter INPUT_X bound to: 16'b1111111111111111 
+	Parameter INPUT_Y bound to: 16'b1111111111111111 
+	Parameter OPCODE bound to: 6'b111101 
+	Parameter EXPECTED_OUTPUT bound to: 16'b1111111111111111 
+	Parameter INIT_state bound to: 4'b0000 
+	Parameter DISP_X_1_state bound to: 4'b0001 
+	Parameter DISP_X_2_state bound to: 4'b0010 
+	Parameter DISP_Y_1_state bound to: 4'b0011 
+	Parameter DISP_Y_2_state bound to: 4'b0100 
+	Parameter DISP_OUT_1_state bound to: 4'b0101 
+	Parameter DISP_OUT_2_state bound to: 4'b0110 
+	Parameter DONE_state bound to: 4'b0111 
+	Parameter ERROR_1_state bound to: 4'b1000 
+	Parameter ERROR_2_state bound to: 4'b1001 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_23.v:138]
+INFO: [Synth 8-6155] done synthesizing module 'statement_tester_23' (32#1) [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/statement_tester_23.v:16]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/auto_tester_4.v:323]
+INFO: [Synth 8-6155] done synthesizing module 'auto_tester_4' (33#1) [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/auto_tester_4.v:7]
+INFO: [Synth 8-6157] synthesizing module 'manual_tester_5' [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/manual_tester_5.v:7]
+	Parameter X_state bound to: 2'b00 
+	Parameter Y_state bound to: 2'b01 
+	Parameter OUTPUT_state bound to: 2'b10 
+	Parameter ERROR_CHECK_state bound to: 2'b11 
+INFO: [Synth 8-6155] done synthesizing module 'manual_tester_5' (34#1) [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/manual_tester_5.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'au_top_0' (35#1) [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/au_top_0.v:7]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1000.164 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1000.164 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1000.164 ; gain = 0.000
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.283 . Memory (MB): peak = 1000.164 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/constraint/alchitry.xdc]
+Finished Parsing XDC File [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/constraint/alchitry.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/constraint/alchitry.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/au_top_0_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/au_top_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/constraint/io.xdc]
+Finished Parsing XDC File [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/constraint/io.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/constraint/io.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/au_top_0_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/au_top_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [C:/Program Files/Alchitry/Alchitry Labs/library/components/au.xdc]
+Finished Parsing XDC File [C:/Program Files/Alchitry/Alchitry Labs/library/components/au.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1000.164 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 1000.164 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 1000.164 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tftg256-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 1000.164 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:27 . Memory (MB): peak = 1000.164 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'M_state_q_reg' in module 'statement_tester_7'
+INFO: [Synth 8-802] inferred FSM for state register 'M_state_q_reg' in module 'statement_tester_8'
+INFO: [Synth 8-802] inferred FSM for state register 'M_state_q_reg' in module 'statement_tester_9'
+INFO: [Synth 8-802] inferred FSM for state register 'M_state_q_reg' in module 'statement_tester_10'
+INFO: [Synth 8-802] inferred FSM for state register 'M_state_q_reg' in module 'statement_tester_11'
+INFO: [Synth 8-802] inferred FSM for state register 'M_state_q_reg' in module 'statement_tester_12'
+INFO: [Synth 8-802] inferred FSM for state register 'M_state_q_reg' in module 'statement_tester_13'
+INFO: [Synth 8-802] inferred FSM for state register 'M_state_q_reg' in module 'statement_tester_14'
+INFO: [Synth 8-802] inferred FSM for state register 'M_state_q_reg' in module 'statement_tester_15'
+INFO: [Synth 8-802] inferred FSM for state register 'M_state_q_reg' in module 'statement_tester_16'
+INFO: [Synth 8-802] inferred FSM for state register 'M_state_q_reg' in module 'statement_tester_17'
+INFO: [Synth 8-802] inferred FSM for state register 'M_state_q_reg' in module 'statement_tester_18'
+INFO: [Synth 8-802] inferred FSM for state register 'M_state_q_reg' in module 'statement_tester_19'
+INFO: [Synth 8-802] inferred FSM for state register 'M_state_q_reg' in module 'statement_tester_20'
+INFO: [Synth 8-802] inferred FSM for state register 'M_state_q_reg' in module 'statement_tester_21'
+INFO: [Synth 8-802] inferred FSM for state register 'M_state_q_reg' in module 'statement_tester_22'
+INFO: [Synth 8-802] inferred FSM for state register 'M_state_q_reg' in module 'statement_tester_23'
+INFO: [Synth 8-802] inferred FSM for state register 'M_autostate_q_reg' in module 'auto_tester_4'
+INFO: [Synth 8-802] inferred FSM for state register 'M_state_q_reg' in module 'manual_tester_5'
+WARNING: [Synth 8-327] inferring latch for variable 'result_reg' [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/shifter16_31.v:23]
+WARNING: [Synth 8-327] inferring latch for variable 'result_reg' [C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.srcs/sources_1/imports/verilog/comparator16_32.v:17]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+              INIT_state |                             0000 |                             0000
+          DISP_X_1_state |                             0001 |                             0001
+          DISP_X_2_state |                             0010 |                             0010
+          DISP_Y_1_state |                             0011 |                             0011
+          DISP_Y_2_state |                             0100 |                             0100
+        DISP_OUT_1_state |                             0101 |                             0101
+        DISP_OUT_2_state |                             0110 |                             0110
+              DONE_state |                             0111 |                             0111
+           ERROR_1_state |                             1000 |                             1000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'M_state_q_reg' using encoding 'sequential' in module 'statement_tester_7'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+              INIT_state |                             0000 |                             0000
+          DISP_X_1_state |                             0001 |                             0001
+          DISP_X_2_state |                             0010 |                             0010
+          DISP_Y_1_state |                             0011 |                             0011
+          DISP_Y_2_state |                             0100 |                             0100
+        DISP_OUT_1_state |                             0101 |                             0101
+        DISP_OUT_2_state |                             0110 |                             0110
+              DONE_state |                             0111 |                             0111
+           ERROR_1_state |                             1000 |                             1000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'M_state_q_reg' using encoding 'sequential' in module 'statement_tester_8'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+              INIT_state |                             0000 |                             0000
+          DISP_X_1_state |                             0001 |                             0001
+          DISP_X_2_state |                             0010 |                             0010
+          DISP_Y_1_state |                             0011 |                             0011
+          DISP_Y_2_state |                             0100 |                             0100
+        DISP_OUT_1_state |                             0101 |                             0101
+        DISP_OUT_2_state |                             0110 |                             0110
+              DONE_state |                             0111 |                             0111
+           ERROR_1_state |                             1000 |                             1000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'M_state_q_reg' using encoding 'sequential' in module 'statement_tester_9'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+              INIT_state |                             0000 |                             0000
+          DISP_X_1_state |                             0001 |                             0001
+          DISP_X_2_state |                             0010 |                             0010
+          DISP_Y_1_state |                             0011 |                             0011
+          DISP_Y_2_state |                             0100 |                             0100
+        DISP_OUT_1_state |                             0101 |                             0101
+        DISP_OUT_2_state |                             0110 |                             0110
+              DONE_state |                             0111 |                             0111
+           ERROR_1_state |                             1000 |                             1000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'M_state_q_reg' using encoding 'sequential' in module 'statement_tester_10'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+              INIT_state |                             0000 |                             0000
+          DISP_X_1_state |                             0001 |                             0001
+          DISP_X_2_state |                             0010 |                             0010
+          DISP_Y_1_state |                             0011 |                             0011
+          DISP_Y_2_state |                             0100 |                             0100
+        DISP_OUT_1_state |                             0101 |                             0101
+        DISP_OUT_2_state |                             0110 |                             0110
+              DONE_state |                             0111 |                             0111
+           ERROR_1_state |                             1000 |                             1000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'M_state_q_reg' using encoding 'sequential' in module 'statement_tester_11'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+              INIT_state |                             0000 |                             0000
+          DISP_X_1_state |                             0001 |                             0001
+          DISP_X_2_state |                             0010 |                             0010
+          DISP_Y_1_state |                             0011 |                             0011
+          DISP_Y_2_state |                             0100 |                             0100
+        DISP_OUT_1_state |                             0101 |                             0101
+        DISP_OUT_2_state |                             0110 |                             0110
+              DONE_state |                             0111 |                             0111
+           ERROR_1_state |                             1000 |                             1000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'M_state_q_reg' using encoding 'sequential' in module 'statement_tester_12'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+              INIT_state |                             0000 |                             0000
+          DISP_X_1_state |                             0001 |                             0001
+          DISP_X_2_state |                             0010 |                             0010
+          DISP_Y_1_state |                             0011 |                             0011
+          DISP_Y_2_state |                             0100 |                             0100
+        DISP_OUT_1_state |                             0101 |                             0101
+        DISP_OUT_2_state |                             0110 |                             0110
+              DONE_state |                             0111 |                             0111
+           ERROR_1_state |                             1000 |                             1000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'M_state_q_reg' using encoding 'sequential' in module 'statement_tester_13'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+              INIT_state |                             0000 |                             0000
+          DISP_X_1_state |                             0001 |                             0001
+          DISP_X_2_state |                             0010 |                             0010
+          DISP_Y_1_state |                             0011 |                             0011
+          DISP_Y_2_state |                             0100 |                             0100
+        DISP_OUT_1_state |                             0101 |                             0101
+        DISP_OUT_2_state |                             0110 |                             0110
+              DONE_state |                             0111 |                             0111
+           ERROR_1_state |                             1000 |                             1000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'M_state_q_reg' using encoding 'sequential' in module 'statement_tester_14'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+              INIT_state |                             0000 |                             0000
+          DISP_X_1_state |                             0001 |                             0001
+          DISP_X_2_state |                             0010 |                             0010
+          DISP_Y_1_state |                             0011 |                             0011
+          DISP_Y_2_state |                             0100 |                             0100
+        DISP_OUT_1_state |                             0101 |                             0101
+        DISP_OUT_2_state |                             0110 |                             0110
+              DONE_state |                             0111 |                             0111
+           ERROR_1_state |                             1000 |                             1000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'M_state_q_reg' using encoding 'sequential' in module 'statement_tester_15'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+              INIT_state |                             0000 |                             0000
+          DISP_X_1_state |                             0001 |                             0001
+          DISP_X_2_state |                             0010 |                             0010
+          DISP_Y_1_state |                             0011 |                             0011
+          DISP_Y_2_state |                             0100 |                             0100
+        DISP_OUT_1_state |                             0101 |                             0101
+        DISP_OUT_2_state |                             0110 |                             0110
+              DONE_state |                             0111 |                             0111
+           ERROR_1_state |                             1000 |                             1000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'M_state_q_reg' using encoding 'sequential' in module 'statement_tester_16'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+              INIT_state |                             0000 |                             0000
+          DISP_X_1_state |                             0001 |                             0001
+          DISP_X_2_state |                             0010 |                             0010
+          DISP_Y_1_state |                             0011 |                             0011
+          DISP_Y_2_state |                             0100 |                             0100
+        DISP_OUT_1_state |                             0101 |                             0101
+        DISP_OUT_2_state |                             0110 |                             0110
+              DONE_state |                             0111 |                             0111
+           ERROR_1_state |                             1000 |                             1000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'M_state_q_reg' using encoding 'sequential' in module 'statement_tester_17'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+              INIT_state |                             0000 |                             0000
+          DISP_X_1_state |                             0001 |                             0001
+          DISP_X_2_state |                             0010 |                             0010
+          DISP_Y_1_state |                             0011 |                             0011
+          DISP_Y_2_state |                             0100 |                             0100
+        DISP_OUT_1_state |                             0101 |                             0101
+        DISP_OUT_2_state |                             0110 |                             0110
+              DONE_state |                             0111 |                             0111
+           ERROR_1_state |                             1000 |                             1000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'M_state_q_reg' using encoding 'sequential' in module 'statement_tester_18'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+              INIT_state |                             0000 |                             0000
+          DISP_X_1_state |                             0001 |                             0001
+          DISP_X_2_state |                             0010 |                             0010
+          DISP_Y_1_state |                             0011 |                             0011
+          DISP_Y_2_state |                             0100 |                             0100
+        DISP_OUT_1_state |                             0101 |                             0101
+        DISP_OUT_2_state |                             0110 |                             0110
+              DONE_state |                             0111 |                             0111
+           ERROR_1_state |                             1000 |                             1000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'M_state_q_reg' using encoding 'sequential' in module 'statement_tester_19'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+              INIT_state |                             0000 |                             0000
+          DISP_X_1_state |                             0001 |                             0001
+          DISP_X_2_state |                             0010 |                             0010
+          DISP_Y_1_state |                             0011 |                             0011
+          DISP_Y_2_state |                             0100 |                             0100
+        DISP_OUT_1_state |                             0101 |                             0101
+        DISP_OUT_2_state |                             0110 |                             0110
+              DONE_state |                             0111 |                             0111
+           ERROR_1_state |                             1000 |                             1000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'M_state_q_reg' using encoding 'sequential' in module 'statement_tester_20'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+              INIT_state |                             0000 |                             0000
+          DISP_X_1_state |                             0001 |                             0001
+          DISP_X_2_state |                             0010 |                             0010
+          DISP_Y_1_state |                             0011 |                             0011
+          DISP_Y_2_state |                             0100 |                             0100
+        DISP_OUT_1_state |                             0101 |                             0101
+        DISP_OUT_2_state |                             0110 |                             0110
+              DONE_state |                             0111 |                             0111
+           ERROR_1_state |                             1000 |                             1000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'M_state_q_reg' using encoding 'sequential' in module 'statement_tester_21'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+              INIT_state |                             0000 |                             0000
+          DISP_X_1_state |                             0001 |                             0001
+          DISP_X_2_state |                             0010 |                             0010
+          DISP_Y_1_state |                             0011 |                             0011
+          DISP_Y_2_state |                             0100 |                             0100
+        DISP_OUT_1_state |                             0101 |                             0101
+        DISP_OUT_2_state |                             0110 |                             0110
+              DONE_state |                             0111 |                             0111
+           ERROR_1_state |                             1000 |                             1000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'M_state_q_reg' using encoding 'sequential' in module 'statement_tester_22'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+              INIT_state |                             0000 |                             0000
+          DISP_X_1_state |                             0001 |                             0001
+          DISP_X_2_state |                             0010 |                             0010
+          DISP_Y_1_state |                             0011 |                             0011
+          DISP_Y_2_state |                             0100 |                             0100
+        DISP_OUT_1_state |                             0101 |                             0101
+        DISP_OUT_2_state |                             0110 |                             0110
+              DONE_state |                             0111 |                             0111
+           ERROR_1_state |                             1000 |                             1000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'M_state_q_reg' using encoding 'sequential' in module 'statement_tester_23'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+       STANDBY_autostate |                            00000 |                            00000
+        TEST_0_autostate |                            00001 |                            00001
+        TEST_1_autostate |                            00010 |                            00010
+        TEST_2_autostate |                            00011 |                            00011
+        TEST_3_autostate |                            00100 |                            00100
+        TEST_4_autostate |                            00101 |                            00101
+        TEST_5_autostate |                            00110 |                            00110
+        TEST_6_autostate |                            00111 |                            00111
+        TEST_7_autostate |                            01000 |                            01000
+        TEST_8_autostate |                            01001 |                            01001
+        TEST_9_autostate |                            01010 |                            01010
+       TEST_12_autostate |                            01011 |                            01101
+       TEST_13_autostate |                            01100 |                            01110
+       TEST_14_autostate |                            01101 |                            01111
+       TEST_15_autostate |                            01110 |                            10000
+       TEST_16_autostate |                            01111 |                            10001
+       TEST_17_autostate |                            10000 |                            10010
+       TEST_18_autostate |                            10001 |                            10011
+                  iSTATE |                            10010 |                            10100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'M_autostate_q_reg' using encoding 'sequential' in module 'auto_tester_4'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 X_state |                               00 |                               00
+                 Y_state |                               01 |                               01
+            OUTPUT_state |                               10 |                               10
+       ERROR_CHECK_state |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'M_state_q_reg' using encoding 'sequential' in module 'manual_tester_5'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:26 ; elapsed = 00:00:30 . Memory (MB): peak = 1000.164 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   18 Bit       Adders := 18    
+	   3 Input   16 Bit       Adders := 18    
++---XORs : 
+	   2 Input     16 Bit         XORs := 18    
+	   2 Input      1 Bit         XORs := 18    
++---Registers : 
+	               18 Bit    Registers := 18    
+	               16 Bit    Registers := 20    
+	                6 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 20    
+	                1 Bit    Registers := 39    
++---Muxes : 
+	   4 Input   24 Bit        Muxes := 1     
+	   2 Input   24 Bit        Muxes := 1     
+	   2 Input   18 Bit        Muxes := 18    
+	   4 Input   16 Bit        Muxes := 55    
+	   2 Input   16 Bit        Muxes := 143   
+	   3 Input   16 Bit        Muxes := 18    
+	   9 Input   16 Bit        Muxes := 17    
+	   9 Input    8 Bit        Muxes := 17    
+	  19 Input    8 Bit        Muxes := 1     
+	   4 Input    8 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 1     
+	   9 Input    6 Bit        Muxes := 7     
+	  19 Input    6 Bit        Muxes := 1     
+	   9 Input    5 Bit        Muxes := 2     
+	  18 Input    5 Bit        Muxes := 1     
+	   4 Input    4 Bit        Muxes := 19    
+	   9 Input    4 Bit        Muxes := 34    
+	   2 Input    4 Bit        Muxes := 18    
+	  19 Input    4 Bit        Muxes := 1     
+	   9 Input    3 Bit        Muxes := 2     
+	   4 Input    2 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 5     
+	   2 Input    1 Bit        Muxes := 75    
+	   4 Input    1 Bit        Muxes := 93    
+	   9 Input    1 Bit        Muxes := 37    
+	  19 Input    1 Bit        Muxes := 18    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+DSP Report: Generating DSP alu/addormul16/multiplier16/s0, operation Mode is: (A:0xfff2)*(B:0xfff3).
+DSP Report: operator alu/addormul16/multiplier16/s0 is absorbed into DSP alu/addormul16/multiplier16/s0.
+DSP Report: Generating DSP alu/addormul16/multiplier16/s0, operation Mode is: (A:0x2f2f)*(B:0x101).
+DSP Report: operator alu/addormul16/multiplier16/s0 is absorbed into DSP alu/addormul16/multiplier16/s0.
+DSP Report: Generating DSP alu/addormul16/multiplier16/s0, operation Mode is: (A:0xffff)*(B:0xffff).
+DSP Report: operator alu/addormul16/multiplier16/s0 is absorbed into DSP alu/addormul16/multiplier16/s0.
+DSP Report: Generating DSP alu/addormul16/multiplier16/s0, operation Mode is: (A:0xf007)*(B:0x202).
+DSP Report: operator alu/addormul16/multiplier16/s0 is absorbed into DSP alu/addormul16/multiplier16/s0.
+DSP Report: Generating DSP alu/addormul16/multiplier16/s0, operation Mode is: (A:0xffff)*(B:0xffff).
+DSP Report: operator alu/addormul16/multiplier16/s0 is absorbed into DSP alu/addormul16/multiplier16/s0.
+DSP Report: Generating DSP manual_tester/alu/addormul16/multiplier16/s0, operation Mode is: A2*B2.
+DSP Report: register manual_tester/M_y_q_reg is absorbed into DSP manual_tester/alu/addormul16/multiplier16/s0.
+DSP Report: register manual_tester/M_x_q_reg is absorbed into DSP manual_tester/alu/addormul16/multiplier16/s0.
+DSP Report: operator manual_tester/alu/addormul16/multiplier16/s0 is absorbed into DSP manual_tester/alu/addormul16/multiplier16/s0.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:55 ; elapsed = 00:01:03 . Memory (MB): peak = 1000.164 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping	Report (see note below)
++----------------+-----------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name     | DSP Mapping           | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++----------------+-----------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|multiplier16_34 | (A:0xfff2)*(B:0xfff3) | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|multiplier16_34 | (A:0x2f2f)*(B:0x101)  | 14     | 9      | -      | -      | 23     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|multiplier16_34 | (A:0xffff)*(B:0xffff) | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|multiplier16_34 | (A:0xf007)*(B:0x202)  | 16     | 10     | -      | -      | 26     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|multiplier16_34 | (A:0xffff)*(B:0xffff) | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|au_top_0        | A2*B2                 | 16     | 16     | -      | -      | 32     | 1    | 1    | -    | -    | -     | 0    | 0    | 
++----------------+-----------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:12 ; elapsed = 00:01:22 . Memory (MB): peak = 1019.234 ; gain = 19.070
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:15 ; elapsed = 00:01:25 . Memory (MB): peak = 1071.328 ; gain = 71.164
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:17 ; elapsed = 00:01:28 . Memory (MB): peak = 1074.262 ; gain = 74.098
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:24 ; elapsed = 00:01:37 . Memory (MB): peak = 1087.051 ; gain = 86.887
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:24 ; elapsed = 00:01:37 . Memory (MB): peak = 1087.051 ; gain = 86.887
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:25 ; elapsed = 00:01:37 . Memory (MB): peak = 1087.051 ; gain = 86.887
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:25 ; elapsed = 00:01:37 . Memory (MB): peak = 1087.051 ; gain = 86.887
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:25 ; elapsed = 00:01:37 . Memory (MB): peak = 1087.051 ; gain = 86.887
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:25 ; elapsed = 00:01:37 . Memory (MB): peak = 1087.051 ; gain = 86.887
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |BUFG    |     1|
+|2     |CARRY4  |   319|
+|3     |DSP48E1 |     2|
+|5     |LUT1    |    79|
+|6     |LUT2    |   390|
+|7     |LUT3    |    67|
+|8     |LUT4    |   158|
+|9     |LUT5    |   187|
+|10    |LUT6    |   543|
+|11    |MUXF7   |    69|
+|12    |MUXF8   |    19|
+|13    |FDRE    |  1340|
+|14    |FDSE    |     4|
+|15    |LD      |    17|
+|16    |IBUF    |    28|
+|17    |OBUF    |    45|
++------+--------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:25 ; elapsed = 00:01:37 . Memory (MB): peak = 1087.051 ; gain = 86.887
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:07 ; elapsed = 00:01:32 . Memory (MB): peak = 1087.051 ; gain = 86.887
+Synthesis Optimization Complete : Time (s): cpu = 00:01:25 ; elapsed = 00:01:38 . Memory (MB): peak = 1087.051 ; gain = 86.887
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.063 . Memory (MB): peak = 1099.137 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 426 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1099.137 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 17 instances were transformed.
+  LD => LDCE: 17 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+148 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:35 ; elapsed = 00:01:51 . Memory (MB): peak = 1099.137 ; gain = 98.973
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Hi/Downloads/Telegram Desktop/errortesting/errortesting/work/vivado/16BitALU/16BitALU.runs/synth_1/au_top_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file au_top_0_utilization_synth.rpt -pb au_top_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Mar 15 14:02:44 2023...
