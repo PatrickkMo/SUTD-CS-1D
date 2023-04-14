@@ -1,0 +1,28 @@
+module alu (
+    input a[16],
+    input b[16],
+    input alufn[6],
+    
+    output res[16]
+  ) {
+  
+  .a(a) {
+  .b(b) {
+  .alufn(alufn) {
+    math math;
+    comparator comparator;
+  
+  }     
+  }
+  }
+
+  always {
+    res = 0;
+    case (alufn[5:4]) {
+      2b00:
+        res = math.res;
+      2b11:
+        res = comparator.res;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+module math(
+    input a[16],
+    input b[16],
+    input alufn[6],
+    
+    output res[16]
+  ) {
+  
+  .a(a){ 
+  .b(b){
+
+  }
+  }
+  always {
+    case (alufn[5:0]) {
+      6b000000:
+        res = a+b;
+      6b000001:
+        res = a-b;
+      6b000010:
+        res = a*b;
+      6b000011:
+        res = a/b;
+      default:
+        res = 8b00000000;
+    }
+  }
+}

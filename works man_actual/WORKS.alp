@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="WORKS" board="Alchitry Au" language="Lucid" version="3">
+  <files>
+    <src>alu.luc</src>
+    <src>bin_to_dec.luc</src>
+    <component>pipeline.luc</component>
+    <src>regfile.luc</src>
+    <src>globals.luc</src>
+    <component>counter.luc</component>
+    <component>decoder.luc</component>
+    <src>seven_seg.luc</src>
+    <src>screen_display.luc</src>
+    <src>math.luc</src>
+    <src>rom_ish.luc</src>
+    <src>player_move.luc</src>
+    <src>multi_seven_seg.luc</src>
+    <src>player_display.luc</src>
+    <src>led_writer.luc</src>
+    <component>reset_conditioner.luc</component>
+    <src top="true">au_top.luc</src>
+    <src>branch_display.luc</src>
+    <component>edge_detector.luc</component>
+    <src>dual_matrix.luc</src>
+    <src>comparator.luc</src>
+    <src>main.luc</src>
+    <component>button_conditioner.luc</component>
+    <constraint>custom.acf</constraint>
+    <constraint>au.xdc</constraint>
+  </files>
+</project>

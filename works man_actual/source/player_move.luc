@@ -1,0 +1,40 @@
+module player_move(
+   
+    input b[8],
+    input clk,
+    input rst,
+    output res[8]
+    )
+   {
+  sig x[5], y[3];
+ 
+  sig player_position[8];
+  sig player_move[8];
+  sig new_position[8];
+  
+.clk(clk){
+  .rst(rst){
+    dff player_position_dff[8](#INIT(8b01100001));
+    }}
+  always {
+    player_move = b;
+    player_position = player_position_dff.q;
+    new_position[7:0]= player_position_dff.q;  
+    x = player_position[4:0];
+    y = player_position[7:5];
+
+    if (b == 1){
+      if (y[2] ==0 ){
+        new_position[7] = 1;
+      }
+      else {
+        new_position[7] = 0;
+      }
+    }
+    else{
+      new_position[7] = player_position_dff.q[7];
+    }
+    res = new_position;
+    player_position_dff.d = new_position;
+  }
+}

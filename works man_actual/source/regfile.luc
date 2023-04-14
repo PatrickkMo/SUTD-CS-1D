@@ -1,0 +1,94 @@
+module regfile (
+    input clk,  // clock
+    input rst,  // reset
+    
+    input asel[16],
+    input aconst,
+    input bsel[16],
+    input bconst, 
+    input wsel[4],
+    input we,
+    input wd[16], 
+    output aout[16],
+    output bout[16],
+    output dump_state[8],
+    output dump_collisions[8],
+    output dump_branch[8],
+    output dump_pos[8],
+    output dump_score[8]
+  ) {
+  
+  .clk(clk) {
+  .rst(rst) {
+      dff player_pos[8](#INIT(8b01100001));
+      dff state_dff[8](#INIT(8b00000000));
+      dff branch_positions[8](#INIT(8b00000000));
+      dff collision[8](#INIT(0));
+      dff score[8](#INIT(8b0));
+  }
+  }
+  rom_ish rom(.state(state_dff.q));
+
+  always {
+    dump_branch = branch_positions.q;
+    dump_pos = player_pos.q;
+    dump_score = score.q;
+    branch_positions.d = rom.out[17];
+    dump_collisions = collision.q;
+    aout = 0;
+    if (aconst) {
+      aout = asel;
+    } else {
+      case (asel) {
+        0:
+          aout = player_pos.q;
+        2:
+          aout = branch_positions.q;     
+        3:
+          aout = 0;
+        6:
+          aout = state_dff.q; 
+        1:
+          aout = score.q;
+      }
+    }    
+    bout = 0;
+    if (bconst) {
+      bout = bsel;
+    } else {
+      case (bsel) {
+        0:
+          bout = player_pos.q;
+        2:
+          bout = branch_positions.q;
+        3:
+         bout = 0;
+        6:
+          bout = state_dff.q;
+        1:
+         bout = 1;
+      }
+    }   
+    if (we) {
+      case (wsel) {
+        0:
+          player_pos.d = wd;
+        1:
+          score.d = wd;
+        3:
+          collision.d = wd;
+        6:
+          state_dff.d = wd;
+            }
+          }
+    dump_state = state_dff.q;
+  }
+}  
+
+
+   
+     
+    
+    
+  
+

@@ -1,0 +1,58 @@
+// dual screen display module
+module dual_matrix #(
+  WIDTH = 32: WIDTH > 0,
+  HEIGHT = 8: HEIGHT > 0,
+  PIXELS_PER_SCREEN = WIDTH * HEIGHT,
+  NUM_PIXELS = PIXELS_PER_SCREEN *2
+    ) (
+    input clk,  // clock
+    input rst,  // reset
+    input update,
+    input color[24],
+    output x[$clog2(WIDTH)], // x is 5 bits
+    output y[$clog2(HEIGHT)], // one more bit for the screen; y is 3 bits
+    output pixel[$clog2(WIDTH * HEIGHT*2)],
+    output screen[1],
+    output led
+  ) {
+
+  led_writer writer(
+    #PIXEL_COUNT(NUM_PIXELS), .clk(clk), .rst(rst)
+  );  
+  sig pixel_no[$clog2(NUM_PIXELS)];
+  sig modulo_pixel[$clog2(HEIGHT)];
+  sig x_position[$clog2(WIDTH)];
+  
+  always {
+    writer.color = color;
+    writer.update = update;
+    pixel = writer.pixel;
+    led = writer.led;
+    pixel_no = writer.pixel;
+    
+    if (pixel_no < PIXELS_PER_SCREEN) {
+      screen = 0;
+      x_position = pixel_no / HEIGHT;
+      modulo_pixel = pixel_no - x_position * HEIGHT;
+      x = x_position;
+    
+      if (x_position[0] == 1b0) {
+        y = HEIGHT - modulo_pixel - 1b1;
+      } else {
+        y = modulo_pixel;
+      }
+    } else {
+      screen = 1;
+      x_position = (pixel_no - PIXELS_PER_SCREEN) / HEIGHT;
+
+      modulo_pixel = (pixel_no - PIXELS_PER_SCREEN) - x_position * HEIGHT;
+      x = x_position;
+      
+      if (x_position[0] == 1b0) {
+        y = modulo_pixel;
+      } else {
+        y = HEIGHT - modulo_pixel - 1b1;
+      }
+    }
+  }
+}

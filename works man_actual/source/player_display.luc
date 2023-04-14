@@ -1,0 +1,43 @@
+module player_display (
+    input clk,  // clock
+    input rst,  // reset
+    input player_position[8],
+ //   input player_disk[4],
+    input screen,
+  //  input trigger,
+    input x[5], input y[3],
+    output color[24]
+  ) {
+
+  sig player_y[3];
+  sig player_x[5];
+  
+  always {
+    color = Colors.BLACK;
+    
+   // player_position should colide with branch_position at either (8b 011 00001) or (8b 111 00001)
+   // player_position[7:5] 3b011 (shows up on left) or 3b111 (shows up on right)
+   // player_position[4:0] always 5b00001
+      
+      if (screen == 0 && player_position[7] == 0){
+      player_y = 3b000 + player_position[6:5] + 2;
+      player_x = player_position[4:0];
+      }
+     else if (screen == 1 && player_position[7] == 1){
+      player_y = 3b000 +  player_position[6:5] + 1;
+      player_x = 31-player_position[4:0];
+      }
+      else{
+      player_y = 8b0;
+      player_x = 8b0;
+      }
+    if (player_x == x) {
+      if (player_y == y
+      ||player_y == y+ 1|| player_y == y+2){
+      color = Colors.PLAYER_COLOR;
+      }
+    }
+ 
+    
+  }
+}

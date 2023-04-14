@@ -1,0 +1,9 @@
+global Alufns {
+  const AND = 6h18;
+  const OR = 6h1E;
+  const A = 6h1A;
+  const CMPEQ = 6h33;
+  const CMPLT = 6h35;
+  const CMPLE = 6h37;
+}
+

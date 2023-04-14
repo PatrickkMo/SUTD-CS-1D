@@ -1,0 +1,42 @@
+module branch_display (
+    input clk,  // clock
+    input rst,  // reset
+    input branch_positions[19][8],
+    input x[5], input y[3],
+    input screen,
+    output color[24]
+    
+  ) {
+  sig branch_x[5], branch_y[3];
+  sig branch_position[8];
+  sig k[4];
+
+    
+  always {
+    color = Colors.BLACK;
+    for (k=0; k<15; k++) {
+     branch_position = branch_positions[k];
+      if (screen == 0 && branch_position[7] == 0){
+      branch_y = 3b000 + branch_position[6:5] + 2;
+      branch_x = branch_position[4:0];
+      }
+     else if (screen == 1 && branch_position[7] == 1){
+      branch_y = 3b000 +  branch_position[6:5] + 1;
+      branch_x = 31-branch_position[4:0];
+      }
+      else{
+      branch_y = 8b0;
+      branch_x = 8b0;
+      }
+ 
+      if (branch_x == x){
+        if (branch_y == y
+        || branch_y == y +1 || branch_y == y + 2)
+       {
+        color = Colors.LIGHT_BROWN;
+      }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,93 @@
+module au_top (
+    input clk,              // 100MHz clock
+    input rst_n,            // reset button (active low)
+    output led [8],         // 8 user controllable LEDs
+    input usb_rx,           // USB->Serial input
+    output outled,           // to LED strip, Br pin C49, connect LED Strip to 5V for power
+    output usb_tx,          // USB->Serial output
+    output io_led [3][8],   // LEDs on IO Shield
+    output io_seg [8],      // 7-segment LEDs on IO Shield
+    output io_sel [4], 
+         // Digit select on IO Shield
+    input io_button[5],// 5 buttons on IO Shield
+    input io_dip [3][8]     // DIP switches on IO Shield
+  ) {
+  
+  sig rst;   
+  sig pmove_final[8];   
+  sig reset_final;
+  sig score[8];   
+  sig dump_state[8];
+  sig score_digit[4][4];    
+  screen_display display(.clk(clk), .rst(rst));
+  
+  rom_ish rom(.state(dump_state));
+ 
+  bin_to_dec b_to_d;
+  .clk(clk) {
+    // The reset conditioner is used to synchronize the reset signal to the FPGA
+    // clock. This ensures the entire FPGA comes out of reset at the same time.
+    reset_conditioner reset_cond;
+   
+    button_conditioner player_reset;
+    edge_detector button_reset_edge(#RISE(1), #FALL(0));
+    
+    button_conditioner player_move_right;
+    edge_detector button_right_edge(#RISE(1), #FALL(0));
+    
+    edge_detector reset(#RISE(0), #FALL(1));
+  .rst(rst){
+    
+      player_move player_move(.b(pmove_final));
+      multi_seven_seg seg;     
+    }
+   
+  }
+  main main(.clk(clk),
+    .rst(rst),
+    .pmove(pmove_final),
+    .reset_game(reset_final),
+    .player_pos(player_move.res)
+  );
+  always {
+  //ignore
+    //reset test
+    reset.in = io_button[0];
+     reset_cond.in = reset.out;
+ 
+    rst = reset_cond.out;   // conditioned reset
+    usb_tx = usb_rx;        // loop serial port
+     
+    led = io_dip[0][7:0];
+    
+    //score
+    score = main.dump_score;
+    b_to_d.value = score;
+    score_digit = b_to_d.digits;
+    seg.values = score_digit;
+    io_seg = seg.seg;
+    io_sel = seg.sel;
+
+    //actually just a reset button
+    player_reset.in = io_button[0];
+    button_reset_edge.in = player_reset.out;
+  
+    //actually just move, no direction
+    player_move_right.in = io_button[1];
+    button_right_edge.in = player_move_right.out;
+    
+    //reset or second chance button for losers maybe
+    reset_final = button_reset_edge.out;
+    pmove_final = button_right_edge.out;
+    
+    dump_state = main.dump_state;
+    display.player_position = main.dump_pos;
+    display.branch_positions = rom.out;
+    
+    //display whatever
+    io_led[0] = main.dump_collisions; 
+    io_led[1] = main.dump_pos;
+    io_led[2] = score;
+    outled = display.led;
+  }
+}

@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Fri Apr 14 07:29:00 2023
+# Process ID: 15984
+# Current directory: C:/Users/user/Documents/SUTD/term4/Computational-Structures/works man_actual/work/vivado/WORKS/WORKS.runs/impl_1
+# Command line: vivado.exe -log au_top_0.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source au_top_0.tcl -notrace
+# Log file: C:/Users/user/Documents/SUTD/term4/Computational-Structures/works man_actual/work/vivado/WORKS/WORKS.runs/impl_1/au_top_0.vdi
+# Journal file: C:/Users/user/Documents/SUTD/term4/Computational-Structures/works man_actual/work/vivado/WORKS/WORKS.runs/impl_1\vivado.jou
+# Running On: LAPTOP-QS7C2R87, OS: Windows, CPU Frequency: 3194 MHz, CPU Physical cores: 16, Host memory: 14888 MB
+#-----------------------------------------------------------
+source au_top_0.tcl -notrace

@@ -1,0 +1,136 @@
+module main (
+    input clk,  // clock
+    input rst,  // reset
+    input pmove[8],
+   // input pick_or_drop,
+    input reset_game,
+    input player_pos[8],
+ 
+    output current_state[6],
+    
+    output dump_state[8],
+    
+    output dump_branch[8],
+    output dump_collisions[8],
+    output dump_pos[8],
+    output dump_score[8]
+  ) { 
+  alu alu;
+  
+  .clk(clk) {
+  .rst(rst) {
+    regfile regfile(.wd(alu.res));
+      counter slowclock(#SIZE(1), #DIV(25));
+    fsm states = {
+      START,
+      COLLISION_CHECK,
+      END,
+      DISPLAY_NEXT,
+      INIT_POS,
+      INIT_STATE,
+      UPDATE_POS,
+      UPDATE_SCORE
+    };
+  }
+  }
+  .clk(clk){edge_detector slowclock_edge(#RISE(1), #FALL(0), .in(slowclock.value));
+  
+    }
+  always {
+    alu.a = regfile.aout;
+    alu.b = regfile.bout;
+    dump_branch = regfile.dump_branch;
+    dump_pos = regfile.dump_pos;
+    dump_score = regfile.dump_score;
+    case (states.q) {
+      states.START:
+        regfile.asel = pmove;
+        regfile.bsel = 0;
+        regfile.aconst = 1;
+        regfile.bconst = 1;
+        alu.alufn = Alufns.CMPEQ;
+        regfile.we = 0;
+        regfile.wsel = 0;
+        if (pmove == 0)
+          states.d = states.START;
+        else
+          states.d = states.DISPLAY_NEXT;
+      states.DISPLAY_NEXT:
+        regfile.asel = 6;
+        regfile.bsel = 1;
+        regfile.aconst = 0;
+        regfile.bconst = 0;
+        alu.alufn = 6b000000;
+        regfile.we = 1;
+        regfile.wsel = 6;
+        states.d = states.UPDATE_POS;
+      states.UPDATE_POS:
+        regfile.asel = player_pos;
+        regfile.bsel = 3;
+        regfile.aconst = 1;
+        regfile.bconst = 0;
+        alu.alufn = 6b000000;
+        regfile.we = 1;
+        regfile.wsel = 0;
+        states.d = states.COLLISION_CHECK;
+        
+        states.COLLISION_CHECK:
+        regfile.asel = 0;
+        regfile.bsel = 2;
+        regfile.aconst = 0;
+        regfile.bconst = 0;
+        alu.alufn = 6b110011;
+        regfile.we = 1;
+        regfile.wsel = 3;
+        if (alu.res ==1){
+        states.d = states.END;
+        }
+        else if (slowclock_edge.out){
+   
+        states.d = states.UPDATE_SCORE;
+                  }
+        else{
+        states.d = states.COLLISION_CHECK;
+        }
+      states.END:
+        regfile.asel = 3; 
+        regfile.bsel = 3;  
+        regfile.aconst = 0;
+        regfile.bconst = 0;
+        alu.alufn = 6b000000;
+        regfile.wsel = 0;
+        regfile.we = 0;
+        if(reset_game){
+          states.d = states.START;
+        }
+        else{
+        states.d = states.END;
+        }  
+      states.UPDATE_SCORE:
+        regfile.asel = 1;
+        regfile.bsel = 1; 
+        regfile.aconst = 0;
+        regfile.bconst = 0;
+        alu.alufn = 6b000000;
+        regfile.wsel = 1;
+        regfile.we = 1;
+        states.d = states.DISPLAY_NEXT;
+  
+       default:
+        regfile.asel = 0;
+        regfile.bsel = 0;
+        regfile.aconst = 1;
+        regfile.bconst = 1;
+        alu.alufn = 6b000000;
+        regfile.we = 0;
+        regfile.wsel = 0;
+        states.d = states.START;
+    }
+   
+    current_state = states.q;
+    dump_state = regfile.dump_state;
+    dump_collisions = regfile.dump_collisions;
+    if (reset_game)
+      states.d = states.START;
+  }
+}
